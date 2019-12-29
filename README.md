@@ -295,7 +295,7 @@ In the new blank file, add the following:
 </VirtualHost>
 ```
 
-Here we are creating the virtual host for `mysite.dev`. We have the name of the server – `mysite.dev` instead of `raspberrypi` (the name of your computer).
+Here we are creating the virtual host for `mysite.dev`. We have the name of the server – `mysite.dev` instead of `raspberrypi` (the name of your computer). 
 
 The alias is the URL `www.mysite.dev`. This is what the IP address resolves to. The Document Root tells Apache where the files for our site live. In this case it’s in the new directory that we just created.
 
