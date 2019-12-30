@@ -1,5 +1,10 @@
 # Building a LAMP stack using the Raspberry Pi.
 
+This tutorial was written by [Lindsay K. Mattock](http://lindsaymattock.net) and adapted by [Katherine Walden](https://github.com/kwaldenphd). 
+
+<a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license"><img style="border-width: 0;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="Creative Commons License" /></a>
+This tutorial is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+
 Wikipedia's ["LAMP (software bundle) article"](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) includes the following description:
 
 "LAMP (Linux, Apache, MySQL, PHP/Perl/Python) is an archetypal model of web service stacks, named as an acronym of the names of its original four open-source components: the Linux operating system, the Apache HTTP Server, the MySQL relational database management system (RDBMS), and the PHP programming language. The LAMP components are largely interchangeable and not limited to the original selection. As a solution stack, LAMP is suitable for building dynamic web sites and web applications."
@@ -13,7 +18,9 @@ By the end of this project you will be able to:
 
 ## Acknowledgements
 
-This lesson is adapted from Jonathan Martin’s [Creating LAMP Infrastructure for DH Projects](https://dhlinux.org/wiki/index.php?title=Main_Page) DHSI 2016 course.
+This lab is based on the "Project 4: XML and XSLT" project materials developed by [Lindsay K. Mattock](http://lindsaymattock.net/) for the the [SLIS 5020 Computing Foundations course](http://lindsaymattock.net/computingfoundations.html). 
+
+Dr. Mattock's materials are adapted from Jonathan Martin’s [Creating LAMP Infrastructure for DH Projects](https://dhlinux.org/wiki/index.php?title=Main_Page) DHSI 2016 course.
 
 # Working at the Command Line
 
