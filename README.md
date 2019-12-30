@@ -110,9 +110,9 @@ APT::Periodic::Unattended-Upgrade "1";
 ```
 This set of commands updates the package lists (the new updates available), downloads, and installs the available upgrades every day (designated with a `1`). The `AutocleanInterval` cleans up your downloads folder once a week (a 7 day interval).
 
-<Ctrl> X to exit; Y to save; <enter> to save with the same file name
+`<Ctrl> X` to exit; `Y` to save; `<enter>` to save with the same file name
 
-Now we are going to configure which upgrades we would like to install. Open the 50unattended-upgrades `file sudo nano /etc/apt/apt.conf.d/50unattended-upgrades`
+Now we are going to configure which upgrades we would like to install. Open the 50unattended-upgrades file `sudo nano /etc/apt/apt.conf.d/50unattended-upgrades`
 
 When you open the file you should see quite a bit of text. Note that here the commented text is preceded by a `//` instead of a `#`. We have seen different forms of commenting throughout the term. Remember that commented text is not read by the computer as a command. This is the explanation of the code that is written there for us.
 
@@ -124,7 +124,7 @@ Uncomment or add the following lines in this section:
 "o=Raspbian,n=jessie,1=Raspbian-Security";
 ```
 
-<Ctrl> X to exit; Y to save; <enter> to save with the same file name
+`<Ctrl> X` to exit; `Y` to save; `<enter>` to save with the same file name
   
 Now each day the Pi will automatically check for and install any updates to the OS, including security updates.
 
@@ -144,7 +144,7 @@ With Lynx installed, use the command `lynx` followed by a web address to navigat
 
 <blockquote>Q4: Describe the differences between viewing websites in Lynx and through Firefox/Chrome/Safari/your favorite web browser.</blockquote>
 
-Type <q> to quit Lynx.
+Type `<q>` to quit Lynx.
   
 ## Task 4: Install Apache
   
@@ -168,12 +168,12 @@ Take a look at the hosts file using `sudo nano /etc/hosts`
 
 The `hosts` file should look something like this:
 ```
-127.0.0.1     localhost
-::1           localhost ip6-local host ip6-loopback
-ff02::1       ip6-allnodes
-ff02::02      ip6-allrouters
+127.0.0.1    localhost
+::1          localhost ip6-local host ip6-loopback
+ff02::1      ip6-allnodes
+ff02::2      ip6-allrouters
 
-127.0.1.1     raspberrypi
+127.0.1.1    raspberrypi
 ```
 
 The hosts file maps your computer to the network, that is, it defines the host name (the human readable name of the computer) and the IP address.
@@ -184,7 +184,7 @@ The localhost IP address is always `127.0.0.1`. The `loopback` that you see refe
 
 <blockquote>IP address: An identifier for a computer or device on a TCP/IP network. Networks using the TCP/IP protocol route messages based on the IP address of the destination. The format of an IP address is a 32-bit numeric address written as four numbers separated by periods. Each number can be zero to 255.<sup><a href="#fn2" id="ref2">2</a></sup></blockquote>
 
-We will make some modifications to this file later. For now, just <control> X to exit. N to discard any changes if prompted.
+We will make some modifications to this file later. For now, just `<control> X` to exit. `N` to discard any changes if prompted.
 
 Now each day the Pi will automatically check for and install any updates to the OS, including security updates.
 
@@ -311,7 +311,9 @@ P in this case is for PHP. As indicated earlier the P can also stand for Python 
 
 Install php using `sudo apt-get command sudo apt install php7.3 libapache2-mod-php7.3 php-mysql -y`
 
-Open the php initialization file `sudo nano /etc/php/7.3/apache2/php.ini`
+<blockquote>NOTE: Pay close attention to the version of php that is installed. You will need to know the version number in future steps.</blockquote>
+
+Open the php initialization file `sudo nano /etc/php/7.3/apache2/php.ini`. If you installed a different version, replace the 7.3 with the correct version number.
 
 Check to ensure that the following configuration defaults are correct. You may need to uncomment and modify some lines (you will have to scroll through the file, these lines do not appear together):
 ```php
@@ -324,13 +326,13 @@ register_globals = Off
 ;The register_globals line may not exist. That’s OK
 ```
 
-<blockquote>Use <control><w> to find text within nano. Repeat the command and press <enter> to find multiple instances of the same string.</blockquote>
+<blockquote>Use <code><control><w></code> to find text within nano. Repeat the command and press <code><enter></code> to find multiple instances of the same string.</blockquote>
   
 <blockquote>Lines that being with a “;” are the commented lines.</blockquote> 
 
 Exit and save any changes.
 
-You may have had to enter the `error_log` location. Check to make sure that it exists using `cd command cd /var/log/php`
+You may have had to enter the `error_log` location. Check to make sure that it exists using `cd /var/log/php`
 
 If you receive an error, try to resolve this one on your own: 
 1. navigate to the `/var/log/` directory
@@ -342,7 +344,7 @@ If you receive an error, try to resolve this one on your own:
 
 Restart the server using `service apache2 restart`
 
-Test the PHP install to ensure that it is working properly.
+Test the php install to ensure that it is working properly.
 
 Create a new file called `index.php` in the `/var/www/mysite.dev/public_html` folder.
  
@@ -385,10 +387,10 @@ We need to take a few steps to secure our MySQL databases.
 <blockquote>NOTE: the default answer is in caps, in this case Y. To choose the default press <Enter>.</blockquote>
   
 When prompted, select the following options:
-- remove anonymous users? <Y>
-- disallow root login remotely? <Y>
-- remove test database and access to it? <Y>
-- reload privilege tables now? <Y>
+- remove anonymous users? `<Y>`
+- disallow root login remotely? `<Y>`
+- remove test database and access to it? `<Y>`
+- reload privilege tables now? `<Y>`
 
 Your MySQL installation is now secure.
 
@@ -409,9 +411,9 @@ Now we are going to create a new database and a new user that can have access to
 
 Our last step is to install phpMyAdmin. This is a GUI interface that can be used for MySQL administration.
 1. Install using `sudo apt-get install phpmyadmin –y`
-2.	If prompted for the type of web server to reconfigure select “apache2” with the spacebar and press <ENTER>.
-**	A yellow character will appear next to `apache2` when selected.
-3.	If prompted to configure the database with dbconfig-common select <No> with your arrow keys and press <ENTER>
+2.	If prompted for the type of web server to reconfigure select “apache2” with the spacebar and press `<ENTER>`
+  *	A yellow character will appear next to `apache2` when selected.
+3.	If prompted to configure the database with dbconfig-common select `<No>` with your arrow keys and press `<ENTER>`
 
 Now we need to set up the `.htaccess` file for phpMyAdmin. `.htaccess` files are another type of configuration file used on Apache web servers. 
 1. We first have to make a change to the apache configuration file.
