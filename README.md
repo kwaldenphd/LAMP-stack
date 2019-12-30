@@ -18,7 +18,7 @@ By the end of this project you will be able to:
 
 ## Acknowledgements
 
-This lab is based on the "Project 4: XML and XSLT" project materials developed by [Lindsay K. Mattock](http://lindsaymattock.net/) for the the [SLIS 5020 Computing Foundations course](http://lindsaymattock.net/computingfoundations.html). 
+This lab is based on the "Project 5: LAMP" project materials developed by [Lindsay K. Mattock](http://lindsaymattock.net/) for the the [SLIS 5020 Computing Foundations course](http://lindsaymattock.net/computingfoundations.html). 
 
 Dr. Mattock's materials are adapted from Jonathan Martin’s [Creating LAMP Infrastructure for DH Projects](https://dhlinux.org/wiki/index.php?title=Main_Page) DHSI 2016 course.
 
