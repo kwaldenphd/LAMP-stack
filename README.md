@@ -22,6 +22,21 @@ This lab is based on the "Project 5: LAMP" project materials developed by [Linds
 
 Dr. Mattock's materials are adapted from Jonathan Martin’s [Creating LAMP Infrastructure for DH Projects](https://dhlinux.org/wiki/index.php?title=Main_Page) DHSI 2016 course.
 
+# Table of Contents
+- [Web Browser for this Lab](#web-browser-for-this-lab)
+- [Working at the Command Line](#working-at-the-command-line)
+- [Task 1: Setting Up the Firewall](#task-1-setting-up-the-firewall)
+  * [Uncomplicated Firewall (UFW)](#uncomplicated-firewall-ufw)
+- [Task 2: Automating Your Upgrades and Updates](#task-2-automating-your-upgrades-and-updates)
+- [Installing the LAMP Stack](#installing-the-lamp-stack)
+  * [Task 3: Installing Lynx](#task-3-installing-lynx)
+  * [Task 4: Installing Apache](#task-4-installing-apache)
+  * [Task 5: Setting up a Virtual Host](#task-5-setting-up-a-virtual-host)
+  * [Task 6: Installing PHP](#task-6-installing-php)
+  * [Task 7: Installing MySQL](#task-7-installing-mysql)
+- [Endnotes](#endnotes)
+- [Lab Notebook Questions](#lab-notebook-questions)
+
 ## Web Browser for this Lab
 
 Be sure to use the Chromium web browser installed on you Pi when loading web pages in a GUI browser during this lab.
@@ -144,7 +159,7 @@ What is a LAMP stack? LAMP is very simply a bundle of software that are used tog
 
 Before we get started, we are going to install a simple web browser that we can use at the command line to check our configuration as we install each piece of software.
 
-## Task 3: Install Lynx
+## Task 3: Installing Lynx
 
 <blockquote><a href="https://en.wikipedia.org/wiki/Lynx_(web_browser)">Click here</a> to learn more about the Lynx command-line web browser</blockquote>
 
@@ -156,7 +171,7 @@ Before we get started, we are going to install a simple web browser that we can 
 
 3. Type `<q>` to quit Lynx.
   
-## Task 4: Install Apache
+## Task 4: Installing Apache
   
 What is Apache? Apache is the Web server. This is the software package that allows your computer to offer services to the web. Apache2, and other web servers, use HTTPD or Hypertext Transfer Protocol daemon. This is the program that sits and waits for HTTP requests from other computers and then responds to these requests.
 
@@ -230,7 +245,7 @@ ff02::2      ip6-allrouters
 
 <blockquote>What’s going on here? We have a limited amount of memory and processing power on our machines (remember a server is just a computer), so we need to control the traffic on our machine. While the firewall controls access to the machine, this conf file and the piece of code that we added controls the way the machine acts when it  receives requests – that is this file defines how your server performs when receiving multiple requests. It’s like tuning an engine. For details on what we have just added see https://www.linode.com/docs/websites/apache-tips-and-tricks/tuning-your-apache-server and http://httpd.apache.org/docs/2.2/mod/mpm_common.html#startservers.</blockquote>
 
-## Task 5: Set up a Virtual Host
+## Task 5: Setting up a Virtual Host
 
 Virtual hosting is a method for hosing multiple domain names on a server. A domain name is the human readable designation for the IP address. For example, we used `localhost` and `raspberrypi` to resolve to the IP address 127.0.1.1. On the World Wide Web, you must first register a domain name as a place holder because these particular configurations of letters and numbers have been purchased. The conventions for naming domains are dictated by the Domain Name System. See https://www.w3.org/wiki/Getting_your_content_online for more details. A Domain Name Server is like a phonebook, these servers translate the domain name to the unique IP address for your server. Domain Names allow us to use more memorable representations of the domain names so that we don’t have to remember that string of numbers.
 
