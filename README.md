@@ -104,7 +104,7 @@ These rules provide protection from incoming attacks, but we do need to allow so
 
 <blockquote>Port: Your computer has physical ports and logical ports. Physical ports are where you physically attach an accessory (keyboard, mouse, monitor) to exchange information with the computer. When we talk about ports on the server, we are talking about logical ports. These are designated connecting “places” that are defined by specific Internet Protocols. See Port 80, below as an example.</blockquote>
 
-<blockquote>Protocol: Very simply, protocols are agreed upon rules governing how computers connect to each other and how information is exchanged. A protocol defines how the information is formatted into packets and exchanged between computers. For more information about how HTTP protocols work, see Janet Evans's <a href="https://gumroad.com/l/http-zine">"HTTP: Learn your browser's language" zine</a>.</blockquote>
+<blockquote>Protocol: Very simply, protocols are agreed upon rules governing how computers connect to each other and how information is exchanged. A protocol defines how the information is formatted into packets and exchanged between computers. For more information about how HTTP protocols work, see Julia Evans's <a href="https://gumroad.com/l/http-zine">"HTTP: Learn your browser's language" zine</a>.</blockquote>
 
 <blockquote>Port 80: Is the logical port designated for web-based requests or requests to access the webpages on the server. Port 80 uses the Hypertext Transfer Protocol or HTTP. This should look familiar. This is the protocol that governs the way that information is exchanged between computers on the world wide web. For technical details see http://fab.cba.mit.edu/classes/961.04/people/neil/ip.pdf.</blockquote>
 
@@ -346,10 +346,10 @@ display_errors = Off
 log_errors = On
 error_log = /var/log/php/error.log 
 register_globals = Off 
-;The register_globals line may not exist. That’s OK
 ```
+The register_globals line may not exist. That’s OK.
 
-<blockquote>Use <code><control><w></code> to find text within nano. Repeat the command and press <code><enter></code> to find multiple instances of the same string.</blockquote>
+<blockquote>Use <code>CONTROL W</code> to find text within nano. Repeat the command and press <code>ENTER</code> to find multiple instances of the same string.</blockquote>
   
 <blockquote>Lines that being with a “;” are the commented lines.</blockquote> 
 
@@ -363,7 +363,7 @@ register_globals = Off
   c. navigate to the newly-created `php` directory
   d. use `touch` to create an `error.log` file in the newly created `php` directory.
 
-<blockquote>For help with the commands search the web, or use explainshell.com, or your classmates for help.</blockquote>
+<blockquote>For help with the commands search the web, or use https://explainshell.com, or your classmates for help.</blockquote>
 
 7. Restart the server using `service apache2 restart`
 
@@ -378,7 +378,7 @@ register_globals = Off
 ?>
 ```
 
-<blockquote>Do you want to try some dynamic PHP? Add the line <code><?php echo date('Y-m-d H:i:s'); ?></code> to the <code>index.php</code> file. What do you think this command will do?</blockquote>
+<blockquote>Want to try some dynamic PHP? Add the line <code><?php echo date('Y-m-d H:i:s'); ?></code> to the <code>index.php</code> file. What do you think this command will do?</blockquote>
 
 11. You have just created a basic php file. If you look at the contents of the `public_html` folder, you should now have an `index.html` and `index.php` file in this folder.
 
@@ -407,7 +407,7 @@ At this point we’ve installed the L, A, and P. MySQL (pronounced *My Sequel*) 
   
 <blockquote>Did you forget your password? Use these instructions: https://support.rackspace.com/how-to/mysql-resetting-a-lost-mysql-root-password/</blockquote>
 
-<blockquote>NOTE: the default answer is in caps, in this case Y. To choose the default press <Enter>.</blockquote>
+<blockquote>NOTE: the default answer is in caps, in this case Y. To choose the default press ENTER.</blockquote>
   
 4. When prompted, select the following options:
   - remove anonymous users? `<Y>`
@@ -423,25 +423,25 @@ At this point we’ve installed the L, A, and P. MySQL (pronounced *My Sequel*) 
   c. You should now see the mysql prompt `mariadb>`. This means that we are now working within MySQL and not the Bash Shell.
 
 7. Now we are going to create a new database and a new user that can have access to that database.
-  a. First create a new database called csc2020: `create database csc2020;`
+  * First create a new database called csc2020: `create database csc2020;`
 
-<blockquote>NOT: the semicolons (;) at the end of each of the following lines are crucial for ending the commands. If you press <enter> before typing the ; the command will not execute. Simply type the ; on the next line to execute the command.</blockquote>
+<blockquote>NOTE: the semicolons (;) at the end of each of the following lines are crucial for ending the commands. If you press <enter> before typing the ; the command will not execute. Simply type the ; on the next line to execute the command.</blockquote>
   
-  b. Now you’ll create a new user of the csc2020 called `csc_user` that is identified by a new password. 
-  c. In this case substitute a password for the word password: `grant all on csc2020.* to ‘csc_user’ identified by ‘[INSERT A PASSWORD]’;`
-  d. You have now configured MySQL and can pass on these database credentials to other users of your database. 
-  e. To exit use the command `quit`.
+  * Now you’ll create a new user of the csc2020 called `csc_user` that is identified by a new password. 
+  * In this case substitute a password for the word password: `grant all on csc2020.* to ‘csc_user’ identified by ‘[INSERT A PASSWORD]’;`
+  * You have now configured MySQL and can pass on these database credentials to other users of your database. 
+  * To exit use the command `quit`.
 
 8. Our last step is to install phpMyAdmin. This is a GUI interface that can be used for MySQL administration.
-  a. Install using `sudo apt-get install phpmyadmin –y`
-  b.	If prompted for the type of web server to reconfigure select “apache2” with the spacebar and press `<ENTER>`
+  * Install using `sudo apt-get install phpmyadmin –y`
+  * If prompted for the type of web server to reconfigure select “apache2” with the spacebar and press `<ENTER>`
     *	A yellow character will appear next to `apache2` when selected.
-  c.	If prompted to configure the database with dbconfig-common select `<No>` with your arrow keys and press `<ENTER>`
+  * If prompted to configure the database with dbconfig-common select `<No>` with your arrow keys and press `<ENTER>`
 
 9. Now we need to set up the `.htaccess` file for phpMyAdmin. `.htaccess` files are another type of configuration file used on Apache web servers. 
-  a. We first have to make a change to the apache configuration file.
-  b. Open the file in nano `sudo nano /etc/phpmyadmin/apache.conf`
-  c. Under the directory section, add the line `AllowOverride All` under `Directory Index`
+  * We first have to make a change to the apache configuration file.
+  * Open the file in nano `sudo nano /etc/phpmyadmin/apache.conf`
+  * Under the directory section, add the line `AllowOverride All` under `Directory Index`
 ```php
   <Directory /usr/share/phpmyadmin> 
     Options FollowSymLinks 
@@ -450,8 +450,8 @@ At this point we’ve installed the L, A, and P. MySQL (pronounced *My Sequel*) 
 ```
 
 10. We have now allowed configuration with the `.htaccess` file. Now we can set up a user whose login would be required to access the phpmyadmin login page, adding another layer of security.
-  a. Open the `.htaccess` file with nano `sudo nano /usr/share/phpmyadmin/.htaccess`
-  b. Set up the user authorization within the blank `.htaccess` file with the following code:
+  * Open the `.htaccess` file with nano `sudo nano /usr/share/phpmyadmin/.htaccess`
+  * Set up the user authorization within the blank `.htaccess` file with the following code:
 ```
 AuthType Basic
 AuthName "Restricted Files" 
