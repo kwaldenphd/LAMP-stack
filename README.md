@@ -61,7 +61,7 @@ Our Linux-based OS doesn’t come built in with these reminders, so we have to r
 
 ## Uncomplicated Firewall (UFW)
 
-<blockquote>Firewall: The server’s job is to respond to requests from the outside world and provide access to the information on the server. However, we want to make sure that we can control who has access to the server to prevent attacks, viruses, and unauthorized users from gaining access to the server. As you will see, the firewall is just a set of rules that defines how other computers can connect to the server.</blockquote>
+The server’s job is to respond to requests from the outside world and provide access to the information on the server. However, we want to make sure that we can control who has access to the server to prevent attacks, viruses, and unauthorized users from gaining access to the server. As you will see, the firewall is just a set of rules that defines how other computers can connect to the server.
 
 1. Run `sudo apt-get install gufw` to install Uncomplicated Firewall (UFW) with the graphical user interface. Type `Y` when prompted.
 
@@ -173,7 +173,9 @@ Before we get started, we are going to install a simple web browser that we can 
   
 ## Task 4: Installing Apache
   
-What is Apache? Apache is the Web server. This is the software package that allows your computer to offer services to the web. Apache2, and other web servers, use HTTPD or Hypertext Transfer Protocol daemon. This is the program that sits and waits for HTTP requests from other computers and then responds to these requests.
+What is Apache? 
+
+Apache is the Web server, the software package that allows your computer to offer services to the web. Apache2, and other web servers, use HTTPD or Hypertext Transfer Protocol daemon. Daemon is the program that sits and waits for HTTP requests from other computers and then responds to these requests.
 
 <blockquote>HTTPD: Remember, HTTP is the (Hypertext Transfer Protocol) or the set of rules that allow for the transfer of files (text, images, sound, etc.) on the World Wide Web. D stands for daemon, defined below.</blockquote>
 
@@ -223,7 +225,7 @@ ff02::2      ip6-allrouters
 
 <blockquote>Q8: Open the page in the web browser by using localhost as the URL. Now try the IP address 127.0.1.1 and http://raspberrypi. What happens? Why?</blockquote>
 
-13. Now we are going to configure the server using the `.conf` file (aka the configuration file).
+13. Now we are going to configure the server using the `.conf` file (the configuration file).
 
 14. At the command line use `sudo nano` to open `/etc/apache2/apache2.conf`
  
@@ -249,7 +251,7 @@ ff02::2      ip6-allrouters
 
 Virtual hosting is a method for hosing multiple domain names on a server. A domain name is the human readable designation for the IP address. For example, we used `localhost` and `raspberrypi` to resolve to the IP address 127.0.1.1. On the World Wide Web, you must first register a domain name as a place holder because these particular configurations of letters and numbers have been purchased. The conventions for naming domains are dictated by the Domain Name System. See https://www.w3.org/wiki/Getting_your_content_online for more details. A Domain Name Server is like a phonebook, these servers translate the domain name to the unique IP address for your server. Domain Names allow us to use more memorable representations of the domain names so that we don’t have to remember that string of numbers.
 
-Our server will not be available to the wider WWW, so we don’t have to worry about purchasing a domain name or paying for hosting. However, using the `localhost` IP address we can rename our host. We have already established that `raspberrypi` is the default host. 
+Our server will not be available to the WWW, so we don’t have to worry about purchasing a domain name or paying for hosting. However, using the `localhost` IP address we can rename our host. We have already established that `raspberrypi` is the default host. 
 
 1. Let’s add a host `mysite.dev`. (You can use any name that you would like here. I suggest using the .dev extension rather than .com, .org, .net, etc so that your web browser does not attempt to connect to already existing sites out there in the world.)
 
@@ -276,8 +278,6 @@ Our server will not be available to the wider WWW, so we don’t have to worry a
 11. What you see here is the html file containing the Apache Default page. This is the file that opens when you request to see `mysite.dev`. Exit `nano`.
 
 12. We are going to create a new folder to hold our web files. Navigate back to the `www` folder using `cd ..`
-
-<blockquote>Q10: What does this command do?</blockquote>
 
 13. We should now be back in the `/var/www folder`. You can confirm this by looking at the command prompt. You should see `pi@raspberrypi:/var/www$`.
 
@@ -347,7 +347,7 @@ log_errors = On
 error_log = /var/log/php/error.log 
 register_globals = Off 
 ```
-The register_globals line may not exist. That’s OK.
+The `register_globals` line may not exist. That’s OK.
 
 <blockquote>Use <code>CONTROL W</code> to find text within nano. Repeat the command and press <code>ENTER</code> to find multiple instances of the same string.</blockquote>
   
@@ -358,10 +358,10 @@ The register_globals line may not exist. That’s OK.
 5. You may have had to enter the `error_log` location. Check to make sure that it exists using `cd /var/log/php`
 
 6. If you receive an error, try to resolve this one on your own: 
-  a. navigate to the `/var/log/` directory
-  b. use `mkdir` to create a `php` directory
-  c. navigate to the newly-created `php` directory
-  d. use `touch` to create an `error.log` file in the newly created `php` directory.
+  * navigate to the `/var/log/` directory
+  * use `mkdir` to create a `php` directory
+  * navigate to the newly-created `php` directory
+  * use `touch` to create an `error.log` file in the newly created `php` directory.
 
 <blockquote>For help with the commands search the web, or use https://explainshell.com, or your classmates for help.</blockquote>
 
@@ -378,13 +378,13 @@ The register_globals line may not exist. That’s OK.
 ?>
 ```
 
-<blockquote>Want to try some dynamic PHP? Add the line <code><?php echo date('Y-m-d H:i:s'); ?></code> to the <code>index.php</code> file. What do you think this command will do?</blockquote>
+Optional: Want to try some dynamic PHP? Add the line `<?php echo date('Y-m-d H:i:s'); ?>` to the `index.php` file. What do you think this command will do?
 
 11. You have just created a basic php file. If you look at the contents of the `public_html` folder, you should now have an `index.html` and `index.php` file in this folder.
 
 12. Now open http://mysite.dev/index.php in lynx. You should see `Hello World` on the screen.
 
-<blockquote>Q11: Here we have called mysite.dev/index.php in the browser. Describe in your own words what we are doing with this command.</blockquote>
+<blockquote>Q10: Here we have called mysite.dev/index.php in the browser. Describe in your own words what we are doing with this command.</blockquote>
 
 13. If you just navigate to `mysite.dev` you will see the html file that we created earlier. This is because Apache is defaulting to html. We have to tell the server to default to php by changing the settings. We don’t need to worry about this now.
 
@@ -399,10 +399,10 @@ At this point we’ve installed the L, A, and P. MySQL (pronounced *My Sequel*) 
 2. When the install is complete, restart apache `sudo service apache2 restart`
 
 3. We need to take a few steps to secure our MySQL databases.
-  a. run `sudo mysql_secure_installation`
-  b. hit <enter> when prompted for a password. We haven't set up a password yet.
-  c. type <y> when prompted to change the root password
-  d. enter a password **STORE THIS PASSWORD FOR LATER ACCESS**
+  * run `sudo mysql_secure_installation`
+  * hit <enter> when prompted for a password. We haven't set up a password yet.
+  * type <y> when prompted to change the root password
+  * enter a password **STORE THIS PASSWORD FOR LATER ACCESS**
     * Note: your cursor will not move as you type
   
 <blockquote>Did you forget your password? Use these instructions: https://support.rackspace.com/how-to/mysql-resetting-a-lost-mysql-root-password/</blockquote>
@@ -418,9 +418,9 @@ At this point we’ve installed the L, A, and P. MySQL (pronounced *My Sequel*) 
 5. Your MySQL installation is now secure.
 
 6. Next, we are going to create a database and grant other users permission to use the databases.
-  a. Log in using `mysql –u root –p`. This commands requests to login as the root user with a password.
-  b. When prompted, enter your mysql password.
-  c. You should now see the mysql prompt `mariadb>`. This means that we are now working within MySQL and not the Bash Shell.
+  * Log in using `mysql –u root –p`. This commands requests to login as the root user with a password.
+  * When prompted, enter your mysql password.
+  * You should now see the mysql prompt `mariadb>`. This means that we are now working within MySQL and not the Bash Shell.
 
 7. Now we are going to create a new database and a new user that can have access to that database.
   * First create a new database called csc2020: `create database csc2020;`
@@ -479,7 +479,7 @@ Require valid-user
 
 17. You have just created a separate user name and password to access the phpMyAdmin login page.
 
-<blockquote>Q12: Use the command <code>cat /etc/.htpasswd</code> to return the contents of the .htpasswd file that you just created. What do you see? This file contains an encrypted version of the user name and password that you just created. Why is this important?</blockquote>
+<blockquote>Q11: Use the command <code>cat /etc/.htpasswd</code> to return the contents of the .htpasswd file that you just created. What do you see? This file contains an encrypted version of the user name and password that you just created. Why is this important?</blockquote>
 
 <blockquote>.htpasswd: encrypts passwords using an version of the MD5 algorithm. To read more on .htpasswd see https://httpd.apache.org/docs/current/programs/htpasswd.html.</blockquote>
 
@@ -526,8 +526,6 @@ Q8: Open the page in the web browser by using localhost as the URL. Now try the 
 
 Q9: Can you describe what you are looking at here? Hint: Take a look at the information between the <title> tags.
 
-Q10: What does this command do?
+Q10: Here we have called mysite.dev/index.php in the browser. Describe in your own words what we are doing with this command.
 
-Q11: Here we have called mysite.dev/index.php in the browser. Describe in your own words what we are doing with this command.
-
-Q12: Use the command `cat /etc/.htpasswd` to return the contents of the .htpasswd file that you just created. What do you see? This file contains an encrypted version of the user name and password that you just created. Why is this important?
+Q11: Use the command `cat /etc/.htpasswd` to return the contents of the .htpasswd file that you just created. What do you see? This file contains an encrypted version of the user name and password that you just created. Why is this important?
